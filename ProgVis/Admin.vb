@@ -13,6 +13,7 @@ Public Class Admin
 
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
+        DataGridView2.ReadOnly = True
 
         If conn.State = ConnectionState.Closed Then
             conn.Open()
@@ -34,6 +35,8 @@ Public Class Admin
         idTextBox.ReadOnly = True
         load_table(Q:="SELECT * FROM progvis.users",
                     R:=DataGridView1, S:="A")
+        load_table(Q:="SELECT * FROM progvis.menu",
+            R:=DataGridView2, S:="B")
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -245,15 +248,37 @@ Public Class Admin
         female.Checked = False
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs)
         AdminKoki.Show()
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub Button8_Click(sender As Object, e As EventArgs)
         AdminKasir.Show()
     End Sub
 
-    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+    Private Sub Button9_Click(sender As Object, e As EventArgs)
         AdminPelayan.Show()
+    End Sub
+
+    Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
+        RichTextBox1.Clear()
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow
+            row = DataGridView2.Rows(e.RowIndex)
+
+            Dim selectedValue As String = row.Cells("NamaMenu").Value.ToString()
+
+            ' Check if the value already exists in the RichTextBox
+            If Not RichTextBox1.Text.Contains(selectedValue) Then
+                ' Append the value to the RichTextBox
+                If RichTextBox1.Text.Trim() <> "" Then
+                    RichTextBox1.Text += ", "
+                End If
+                RichTextBox1.Text += selectedValue
+            End If
+        End If
     End Sub
 End Class

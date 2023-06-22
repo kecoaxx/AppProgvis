@@ -27,40 +27,44 @@ Partial Class Admin
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.jabatanDroplist = New System.Windows.Forms.ComboBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.passwordTextBox = New System.Windows.Forms.TextBox()
-        Me.usernameTextBox = New System.Windows.Forms.TextBox()
-        Me.emailTextBox = New System.Windows.Forms.TextBox()
-        Me.namalengkapTextBox = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.idTextBox = New System.Windows.Forms.TextBox()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.male = New System.Windows.Forms.RadioButton()
-        Me.female = New System.Windows.Forms.RadioButton()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.female = New System.Windows.Forms.RadioButton()
+        Me.male = New System.Windows.Forms.RadioButton()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.idTextBox = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.namalengkapTextBox = New System.Windows.Forms.TextBox()
+        Me.emailTextBox = New System.Windows.Forms.TextBox()
+        Me.usernameTextBox = New System.Windows.Forms.TextBox()
+        Me.passwordTextBox = New System.Windows.Forms.TextBox()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.jabatanDroplist = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.dbcontrol = New System.Windows.Forms.TabControl()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
         Me.TabPage1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dbcontrol.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -122,234 +126,25 @@ Partial Class Admin
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "User Control"
         '
-        'Label7
+        'Button6
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(4, 158)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(120, 29)
-        Me.Label7.TabIndex = 16
-        Me.Label7.Text = "Password"
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Button6.Location = New System.Drawing.Point(662, 19)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(106, 83)
+        Me.Button6.TabIndex = 32
+        Me.Button6.Text = "Clear Listbox"
+        Me.Button6.UseVisualStyleBackColor = True
         '
-        'Label8
+        'Label12
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(4, 195)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(97, 29)
-        Me.Label8.TabIndex = 15
-        Me.Label8.Text = "Jabatan"
-        '
-        'jabatanDroplist
-        '
-        Me.jabatanDroplist.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.jabatanDroplist.FormattingEnabled = True
-        Me.jabatanDroplist.Items.AddRange(New Object() {"Admin", "Kasir", "Koki", "Manager", "Pelayan"})
-        Me.jabatanDroplist.Location = New System.Drawing.Point(203, 194)
-        Me.jabatanDroplist.Name = "jabatanDroplist"
-        Me.jabatanDroplist.Size = New System.Drawing.Size(220, 33)
-        Me.jabatanDroplist.TabIndex = 17
-        '
-        'Button2
-        '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(203, 325)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(88, 88)
-        Me.Button2.TabIndex = 18
-        Me.Button2.Text = "Save"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(4, 15)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(36, 29)
-        Me.Label6.TabIndex = 12
-        Me.Label6.Text = "ID"
-        '
-        'Button3
-        '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(297, 325)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(126, 41)
-        Me.Button3.TabIndex = 19
-        Me.Button3.Text = "Update"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(4, 51)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(176, 29)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Nama Lengkap"
-        '
-        'Button4
-        '
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(297, 372)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(126, 41)
-        Me.Button4.TabIndex = 20
-        Me.Button4.Text = "Delete"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(4, 86)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(74, 29)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Email"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(504, 65)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(152, 37)
-        Me.ComboBox1.TabIndex = 21
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(4, 123)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(124, 29)
-        Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Username"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(501, 15)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(97, 29)
-        Me.Label9.TabIndex = 22
-        Me.Label9.Text = "List Box"
-        '
-        'Button5
-        '
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.Location = New System.Drawing.Point(865, 346)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(210, 67)
-        Me.Button5.TabIndex = 24
-        Me.Button5.Text = "Reload Table"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'passwordTextBox
-        '
-        Me.passwordTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.passwordTextBox.Location = New System.Drawing.Point(203, 158)
-        Me.passwordTextBox.Name = "passwordTextBox"
-        Me.passwordTextBox.Size = New System.Drawing.Size(220, 30)
-        Me.passwordTextBox.TabIndex = 14
-        '
-        'usernameTextBox
-        '
-        Me.usernameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.usernameTextBox.Location = New System.Drawing.Point(203, 122)
-        Me.usernameTextBox.Name = "usernameTextBox"
-        Me.usernameTextBox.Size = New System.Drawing.Size(220, 30)
-        Me.usernameTextBox.TabIndex = 8
-        '
-        'emailTextBox
-        '
-        Me.emailTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.emailTextBox.Location = New System.Drawing.Point(203, 86)
-        Me.emailTextBox.Name = "emailTextBox"
-        Me.emailTextBox.Size = New System.Drawing.Size(220, 30)
-        Me.emailTextBox.TabIndex = 7
-        '
-        'namalengkapTextBox
-        '
-        Me.namalengkapTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.namalengkapTextBox.Location = New System.Drawing.Point(203, 50)
-        Me.namalengkapTextBox.Name = "namalengkapTextBox"
-        Me.namalengkapTextBox.Size = New System.Drawing.Size(220, 30)
-        Me.namalengkapTextBox.TabIndex = 6
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(885, 65)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(180, 34)
-        Me.TextBox1.TabIndex = 25
-        '
-        'idTextBox
-        '
-        Me.idTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.idTextBox.Location = New System.Drawing.Point(203, 14)
-        Me.idTextBox.Name = "idTextBox"
-        Me.idTextBox.Size = New System.Drawing.Size(220, 30)
-        Me.idTextBox.TabIndex = 5
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(880, 15)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(132, 29)
-        Me.Label10.TabIndex = 26
-        Me.Label10.Text = "Search Bar"
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(503, 122)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(572, 213)
-        Me.DataGridView1.TabIndex = 23
-        '
-        'male
-        '
-        Me.male.AutoSize = True
-        Me.male.Location = New System.Drawing.Point(203, 237)
-        Me.male.Name = "male"
-        Me.male.Size = New System.Drawing.Size(87, 33)
-        Me.male.TabIndex = 27
-        Me.male.TabStop = True
-        Me.male.Text = "Male"
-        Me.male.UseVisualStyleBackColor = True
-        '
-        'female
-        '
-        Me.female.AutoSize = True
-        Me.female.Location = New System.Drawing.Point(307, 237)
-        Me.female.Name = "female"
-        Me.female.Size = New System.Drawing.Size(116, 33)
-        Me.female.TabIndex = 28
-        Me.female.TabStop = True
-        Me.female.Text = "Female"
-        Me.female.UseVisualStyleBackColor = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(6, 229)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(94, 29)
-        Me.Label11.TabIndex = 29
-        Me.Label11.Text = "Gender"
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(6, 265)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(161, 29)
+        Me.Label12.TabIndex = 31
+        Me.Label12.Text = "Tanggal Lahir"
         '
         'DateTimePicker1
         '
@@ -362,29 +157,239 @@ Partial Class Admin
         Me.DateTimePicker1.TabIndex = 30
         Me.DateTimePicker1.Value = New Date(2023, 6, 20, 0, 0, 0, 0)
         '
-        'Label12
+        'Label11
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(6, 265)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(161, 29)
-        Me.Label12.TabIndex = 31
-        Me.Label12.Text = "Tanggal Lahir"
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(6, 229)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(94, 29)
+        Me.Label11.TabIndex = 29
+        Me.Label11.Text = "Gender"
         '
-        'Button6
+        'female
         '
-        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Button6.Location = New System.Drawing.Point(662, 19)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(106, 83)
-        Me.Button6.TabIndex = 32
-        Me.Button6.Text = "Clear Listbox"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.female.AutoSize = True
+        Me.female.Location = New System.Drawing.Point(307, 237)
+        Me.female.Name = "female"
+        Me.female.Size = New System.Drawing.Size(116, 33)
+        Me.female.TabIndex = 28
+        Me.female.TabStop = True
+        Me.female.Text = "Female"
+        Me.female.UseVisualStyleBackColor = True
+        '
+        'male
+        '
+        Me.male.AutoSize = True
+        Me.male.Location = New System.Drawing.Point(203, 237)
+        Me.male.Name = "male"
+        Me.male.Size = New System.Drawing.Size(87, 33)
+        Me.male.TabIndex = 27
+        Me.male.TabStop = True
+        Me.male.Text = "Male"
+        Me.male.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(503, 122)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.RowTemplate.Height = 24
+        Me.DataGridView1.Size = New System.Drawing.Size(572, 213)
+        Me.DataGridView1.TabIndex = 23
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(880, 15)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(132, 29)
+        Me.Label10.TabIndex = 26
+        Me.Label10.Text = "Search Bar"
+        '
+        'idTextBox
+        '
+        Me.idTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.idTextBox.Location = New System.Drawing.Point(203, 14)
+        Me.idTextBox.Name = "idTextBox"
+        Me.idTextBox.Size = New System.Drawing.Size(220, 30)
+        Me.idTextBox.TabIndex = 5
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(885, 65)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(180, 34)
+        Me.TextBox1.TabIndex = 25
+        '
+        'namalengkapTextBox
+        '
+        Me.namalengkapTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.namalengkapTextBox.Location = New System.Drawing.Point(203, 50)
+        Me.namalengkapTextBox.Name = "namalengkapTextBox"
+        Me.namalengkapTextBox.Size = New System.Drawing.Size(220, 30)
+        Me.namalengkapTextBox.TabIndex = 6
+        '
+        'emailTextBox
+        '
+        Me.emailTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.emailTextBox.Location = New System.Drawing.Point(203, 86)
+        Me.emailTextBox.Name = "emailTextBox"
+        Me.emailTextBox.Size = New System.Drawing.Size(220, 30)
+        Me.emailTextBox.TabIndex = 7
+        '
+        'usernameTextBox
+        '
+        Me.usernameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.usernameTextBox.Location = New System.Drawing.Point(203, 122)
+        Me.usernameTextBox.Name = "usernameTextBox"
+        Me.usernameTextBox.Size = New System.Drawing.Size(220, 30)
+        Me.usernameTextBox.TabIndex = 8
+        '
+        'passwordTextBox
+        '
+        Me.passwordTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.passwordTextBox.Location = New System.Drawing.Point(203, 158)
+        Me.passwordTextBox.Name = "passwordTextBox"
+        Me.passwordTextBox.Size = New System.Drawing.Size(220, 30)
+        Me.passwordTextBox.TabIndex = 14
+        '
+        'Button5
+        '
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Location = New System.Drawing.Point(865, 346)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(210, 67)
+        Me.Button5.TabIndex = 24
+        Me.Button5.Text = "Reload Table"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(501, 15)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(97, 29)
+        Me.Label9.TabIndex = 22
+        Me.Label9.Text = "List Box"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(4, 123)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(124, 29)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Username"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(504, 65)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(152, 37)
+        Me.ComboBox1.TabIndex = 21
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(4, 86)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(74, 29)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Email"
+        '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(297, 372)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(126, 41)
+        Me.Button4.TabIndex = 20
+        Me.Button4.Text = "Delete"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(4, 51)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(176, 29)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "Nama Lengkap"
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(297, 325)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(126, 41)
+        Me.Button3.TabIndex = 19
+        Me.Button3.Text = "Update"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(4, 15)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(36, 29)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "ID"
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(203, 325)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(88, 88)
+        Me.Button2.TabIndex = 18
+        Me.Button2.Text = "Save"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'jabatanDroplist
+        '
+        Me.jabatanDroplist.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.jabatanDroplist.FormattingEnabled = True
+        Me.jabatanDroplist.Items.AddRange(New Object() {"Admin", "Kasir", "Koki", "Manager", "Pelayan"})
+        Me.jabatanDroplist.Location = New System.Drawing.Point(203, 194)
+        Me.jabatanDroplist.Name = "jabatanDroplist"
+        Me.jabatanDroplist.Size = New System.Drawing.Size(220, 33)
+        Me.jabatanDroplist.TabIndex = 17
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(4, 195)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(97, 29)
+        Me.Label8.TabIndex = 15
+        Me.Label8.Text = "Jabatan"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(4, 158)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(120, 29)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Password"
         '
         'dbcontrol
         '
         Me.dbcontrol.Controls.Add(Me.TabPage1)
+        Me.dbcontrol.Controls.Add(Me.TabPage2)
         Me.dbcontrol.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dbcontrol.Location = New System.Drawing.Point(20, 117)
         Me.dbcontrol.Name = "dbcontrol"
@@ -392,44 +397,63 @@ Partial Class Admin
         Me.dbcontrol.Size = New System.Drawing.Size(1108, 464)
         Me.dbcontrol.TabIndex = 30
         '
+        'TabPage2
+        '
+        Me.TabPage2.Controls.Add(Me.Button7)
+        Me.TabPage2.Controls.Add(Me.Button8)
+        Me.TabPage2.Controls.Add(Me.RichTextBox1)
+        Me.TabPage2.Controls.Add(Me.DataGridView2)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 38)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(1100, 422)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Menu"
+        Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(6, 19)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.RowHeadersWidth = 51
+        Me.DataGridView2.RowTemplate.Height = 24
+        Me.DataGridView2.Size = New System.Drawing.Size(673, 382)
+        Me.DataGridView2.TabIndex = 31
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(685, 19)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(397, 140)
+        Me.RichTextBox1.TabIndex = 32
+        Me.RichTextBox1.Text = ""
+        '
         'Button7
         '
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(363, 40)
+        Me.Button7.Location = New System.Drawing.Point(909, 165)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(139, 71)
-        Me.Button7.TabIndex = 31
-        Me.Button7.Text = "Koki"
+        Me.Button7.Size = New System.Drawing.Size(173, 57)
+        Me.Button7.TabIndex = 35
+        Me.Button7.Text = "Clear Text"
         Me.Button7.UseVisualStyleBackColor = True
         '
         'Button8
         '
         Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.Location = New System.Drawing.Point(530, 40)
+        Me.Button8.Location = New System.Drawing.Point(685, 165)
         Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(139, 71)
-        Me.Button8.TabIndex = 32
-        Me.Button8.Text = "Kasir"
+        Me.Button8.Size = New System.Drawing.Size(173, 57)
+        Me.Button8.TabIndex = 34
+        Me.Button8.Text = "Set"
         Me.Button8.UseVisualStyleBackColor = True
-        '
-        'Button9
-        '
-        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.Location = New System.Drawing.Point(695, 40)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(139, 71)
-        Me.Button9.TabIndex = 33
-        Me.Button9.Text = "Pelayan"
-        Me.Button9.UseVisualStyleBackColor = True
         '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1140, 591)
-        Me.Controls.Add(Me.Button9)
-        Me.Controls.Add(Me.Button8)
-        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.dbcontrol)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
@@ -440,6 +464,8 @@ Partial Class Admin
         Me.TabPage1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.dbcontrol.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -476,7 +502,9 @@ Partial Class Admin
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents dbcontrol As TabControl
+    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
-    Friend WithEvents Button9 As Button
 End Class
