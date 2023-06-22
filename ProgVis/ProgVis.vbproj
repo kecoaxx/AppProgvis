@@ -119,6 +119,24 @@
     <Compile Include="Admin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AdminKoki.Designer.vb">
+      <DependentUpon>AdminKoki.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminKoki.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminKasir.Designer.vb">
+      <DependentUpon>AdminKasir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminKasir.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminPelayan.Designer.vb">
+      <DependentUpon>AdminPelayan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPelayan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Kasir.Designer.vb">
       <DependentUpon>Kasir.vb</DependentUpon>
     </Compile>
@@ -170,6 +188,9 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminKoki.resx">
+      <DependentUpon>AdminKoki.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +199,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pelayan.resx">
+      <DependentUpon>Pelayan.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

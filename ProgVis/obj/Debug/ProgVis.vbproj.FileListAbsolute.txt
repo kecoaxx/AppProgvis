@@ -38,3 +38,5 @@ C:\Desktop\hw\UNUD\.Semester 4\Pemrograman Visual\UAS\ProgVis\ProgVis\obj\Debug\
 C:\Desktop\hw\UNUD\.Semester 4\Pemrograman Visual\UAS\ProgVis\ProgVis\obj\Debug\ProgVis.exe
 C:\Desktop\hw\UNUD\.Semester 4\Pemrograman Visual\UAS\ProgVis\ProgVis\obj\Debug\ProgVis.xml
 C:\Desktop\hw\UNUD\.Semester 4\Pemrograman Visual\UAS\ProgVis\ProgVis\obj\Debug\ProgVis.pdb
+C:\Desktop\hw\UNUD\.Semester 4\Pemrograman Visual\UAS\ProgVis\ProgVis\obj\Debug\ProgVis.Pelayan.resources
+C:\Desktop\hw\UNUD\.Semester 4\Pemrograman Visual\UAS\ProgVis\ProgVis\obj\Debug\ProgVis.AdminKoki.resources

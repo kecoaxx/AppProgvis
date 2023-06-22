@@ -1,6 +1,7 @@
 ﻿Imports System.Threading
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
+Imports Mysqlx.XDevAPI.Relational
 
 Public Class Admin
     Dim conn As New MySqlConnection With {.ConnectionString = "server=127.0.0.1;userid=root;password='Placeholder1';database=progvis"}
@@ -31,8 +32,8 @@ Public Class Admin
         conn.Close()
 
         idTextBox.ReadOnly = True
-
-        load_table()
+        load_table(Q:="SELECT * FROM progvis.users",
+                    R:=DataGridView1, S:="A")
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -172,25 +173,30 @@ Public Class Admin
 
         End If
     End Sub
-
-    Private Sub load_table()
+    ' FUNGSI LOAD TABLE DISINI
+    Private Sub load_table(Q As String, R As Object, S As String)
         Dim SDA As New MySqlDataAdapter
         Dim bindSource As New BindingSource
+        Dim table As New DataTable
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()
             End If
-            Dim Query As String = "SELECT idUser As userID, NamaLengkap, Email, Username, Password, Jabatan, Gender, TglLahir FROM progvis.users"
+            Dim Query As String = Q
             COMMAND = New MySqlCommand(Query, conn)
             SDA.SelectCommand = COMMAND
-            SDA.Fill(data_Table)
-            bindSource.DataSource = data_Table
-            DataGridView1.DataSource = bindSource
-            SDA.Update(data_Table)
+            SDA.Fill(table)
+            bindSource.DataSource = table
+            R.DataSource = bindSource
+            SDA.Update(table)
+            conn.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
             conn.Close()
         End Try
+        If Not String.IsNullOrEmpty(S) Then
+            table.TableName = S
+        End If
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -237,5 +243,17 @@ Public Class Admin
         ComboBox1.ResetText()
         male.Checked = False
         female.Checked = False
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        AdminKoki.Show()
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        AdminKasir.Show()
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        AdminPelayan.Show()
     End Sub
 End Class
