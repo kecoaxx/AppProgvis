@@ -56,10 +56,11 @@ Partial Class Admin
         Me.Label7 = New System.Windows.Forms.Label()
         Me.dbcontrol = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.TabPage1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dbcontrol.SuspendLayout()
@@ -399,6 +400,7 @@ Partial Class Admin
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Button10)
         Me.TabPage2.Controls.Add(Me.Button7)
         Me.TabPage2.Controls.Add(Me.Button8)
         Me.TabPage2.Controls.Add(Me.RichTextBox1)
@@ -410,24 +412,6 @@ Partial Class Admin
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Menu"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(6, 19)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.RowHeadersWidth = 51
-        Me.DataGridView2.RowTemplate.Height = 24
-        Me.DataGridView2.Size = New System.Drawing.Size(673, 382)
-        Me.DataGridView2.TabIndex = 31
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(685, 19)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(397, 140)
-        Me.RichTextBox1.TabIndex = 32
-        Me.RichTextBox1.Text = ""
         '
         'Button7
         '
@@ -446,8 +430,36 @@ Partial Class Admin
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(173, 57)
         Me.Button8.TabIndex = 34
-        Me.Button8.Text = "Set"
+        Me.Button8.Text = "Set/Reset"
         Me.Button8.UseVisualStyleBackColor = True
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(685, 19)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(397, 140)
+        Me.RichTextBox1.TabIndex = 32
+        Me.RichTextBox1.Text = ""
+        '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(6, 19)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.RowHeadersWidth = 51
+        Me.DataGridView2.RowTemplate.Height = 24
+        Me.DataGridView2.Size = New System.Drawing.Size(673, 382)
+        Me.DataGridView2.TabIndex = 31
+        '
+        'Button10
+        '
+        Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button10.Location = New System.Drawing.Point(685, 228)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(173, 57)
+        Me.Button10.TabIndex = 37
+        Me.Button10.Text = "Show Available"
+        Me.Button10.UseVisualStyleBackColor = True
         '
         'Admin
         '
@@ -507,4 +519,5 @@ Partial Class Admin
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
+    Friend WithEvents Button10 As Button
 End Class

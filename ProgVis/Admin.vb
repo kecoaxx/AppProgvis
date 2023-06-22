@@ -33,10 +33,35 @@ Public Class Admin
         conn.Close()
 
         idTextBox.ReadOnly = True
-        load_table(Q:="SELECT * FROM progvis.users",
-                    R:=DataGridView1, S:="A")
-        load_table(Q:="SELECT * FROM progvis.menu",
-            R:=DataGridView2, S:="B")
+        LoadTable(Q:="SELECT * FROM progvis.users",
+                    R:=DataGridView1)
+        LoadTable(Q:="SELECT * FROM progvis.menu",
+                    R:=DataGridView2)
+    End Sub
+    ' FUNGSI LOAD TABLE DISINI
+    Private Sub LoadTable(Q As String, R As Object, Optional S As String = "A")
+        Dim SDA As New MySqlDataAdapter
+        Dim bindSource As New BindingSource
+        Dim table As New DataTable
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim Query As String = Q
+            COMMAND = New MySqlCommand(Query, conn)
+            SDA.SelectCommand = COMMAND
+            SDA.Fill(table)
+            bindSource.DataSource = table
+            R.DataSource = bindSource
+            SDA.Update(table)
+            conn.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            conn.Close()
+        End Try
+        If Not String.IsNullOrEmpty(S) Then
+            table.TableName = S
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -176,51 +201,10 @@ Public Class Admin
 
         End If
     End Sub
-    ' FUNGSI LOAD TABLE DISINI
-    Private Sub load_table(Q As String, R As Object, S As String)
-        Dim SDA As New MySqlDataAdapter
-        Dim bindSource As New BindingSource
-        Dim table As New DataTable
-        Try
-            If conn.State = ConnectionState.Closed Then
-                conn.Open()
-            End If
-            Dim Query As String = Q
-            COMMAND = New MySqlCommand(Query, conn)
-            SDA.SelectCommand = COMMAND
-            SDA.Fill(table)
-            bindSource.DataSource = table
-            R.DataSource = bindSource
-            SDA.Update(table)
-            conn.Close()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            conn.Close()
-        End Try
-        If Not String.IsNullOrEmpty(S) Then
-            table.TableName = S
-        End If
-    End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Dim SDA As New MySqlDataAdapter
-        Dim bindSource As New BindingSource
-        Try
-            If conn.State = ConnectionState.Closed Then
-                conn.Open()
-            End If
-            Dim Query As String = "SELECT * FROM progvis.users "
-            COMMAND = New MySqlCommand(Query, conn)
-            SDA.SelectCommand = COMMAND
-            SDA.Fill(data_Table)
-            bindSource.DataSource = data_Table
-            DataGridView1.DataSource = bindSource
-            SDA.Update(data_Table)
-            conn.Close()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            conn.Close()
-        End Try
+        LoadTable(Q:="SELECT * FROM progvis.users", R:=DataGridView1
+                   )
     End Sub
 
     Private Sub male_CheckedChanged(sender As Object, e As EventArgs) Handles male.CheckedChanged
@@ -248,18 +232,6 @@ Public Class Admin
         female.Checked = False
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs)
-        AdminKoki.Show()
-    End Sub
-
-    Private Sub Button8_Click(sender As Object, e As EventArgs)
-        AdminKasir.Show()
-    End Sub
-
-    Private Sub Button9_Click(sender As Object, e As EventArgs)
-        AdminPelayan.Show()
-    End Sub
-
     Private Sub Button7_Click_1(sender As Object, e As EventArgs) Handles Button7.Click
         RichTextBox1.Clear()
     End Sub
@@ -277,8 +249,30 @@ Public Class Admin
                 If RichTextBox1.Text.Trim() <> "" Then
                     RichTextBox1.Text += ", "
                 End If
-                RichTextBox1.Text += selectedValue
+                RichTextBox1.Text += selectedValue.TrimEnd()
             End If
         End If
+    End Sub
+
+    Private Sub Button8_Click_1(sender As Object, e As EventArgs) Handles Button8.Click
+        Try
+            Dim menuname As String = String.Join(", ", RichTextBox1.Text.Split(","c).Select(Function(item) """" + item.Trim() + """"))
+            LoadTable(Q:="UPDATE progvis.menu SET Tersedia='N'", R:=DataGridView2)
+            LoadTable(Q:=$"UPDATE progvis.menu SET Tersedia='Y' WHERE NamaMenu IN ({menuname})",
+                        R:=DataGridView2)
+            LoadTable(Q:="select * from progvis.menu", R:=DataGridView2)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            conn.Close()
+        End Try
+
+    End Sub
+
+    Private Sub Button9_Click_1(sender As Object, e As EventArgs)
+        LoadTable(Q:="UPDATE progvis.menu SET Tersedia='N'; select * from progvis.menu", R:=DataGridView2)
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        LoadTable(Q:="select * from progvis.menu where Tersedia='Y'", R:=DataGridView2)
     End Sub
 End Class

@@ -119,34 +119,16 @@
     <Compile Include="Admin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminKoki.Designer.vb">
-      <DependentUpon>AdminKoki.vb</DependentUpon>
+    <Compile Include="Koki.Designer.vb">
+      <DependentUpon>Koki.vb</DependentUpon>
     </Compile>
-    <Compile Include="AdminKoki.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminKasir.Designer.vb">
-      <DependentUpon>AdminKasir.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AdminKasir.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminPelayan.Designer.vb">
-      <DependentUpon>AdminPelayan.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AdminPelayan.vb">
+    <Compile Include="Koki.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Kasir.Designer.vb">
       <DependentUpon>Kasir.vb</DependentUpon>
     </Compile>
     <Compile Include="Kasir.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Koki.Designer.vb">
-      <DependentUpon>Koki.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Koki.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.vb">
@@ -188,8 +170,8 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminKoki.resx">
-      <DependentUpon>AdminKoki.vb</DependentUpon>
+    <EmbeddedResource Include="Koki.resx">
+      <DependentUpon>Koki.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
