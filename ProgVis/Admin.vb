@@ -1,4 +1,5 @@
 ﻿Imports System.Threading
+Imports System.Windows
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.XDevAPI.Relational
@@ -9,6 +10,7 @@ Public Class Admin
     Dim READER As MySqlDataReader
     Dim data_Table As New DataTable
     Dim gender As String
+    Dim username As String = Login.username
 
 
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -72,7 +74,7 @@ Public Class Admin
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim timestring As String
         timestring = Date.Now.ToString("hh:mm:ss")
-        Label1.Text = $"Welcome Admin | {timestring}"
+        Label1.Text = $"Welcome {username} | {timestring}"
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click

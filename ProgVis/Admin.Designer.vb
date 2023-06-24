@@ -56,11 +56,11 @@ Partial Class Admin
         Me.Label7 = New System.Windows.Forms.Label()
         Me.dbcontrol = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Button10 = New System.Windows.Forms.Button()
         Me.TabPage1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dbcontrol.SuspendLayout()
@@ -413,6 +413,16 @@ Partial Class Admin
         Me.TabPage2.Text = "Menu"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'Button10
+        '
+        Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button10.Location = New System.Drawing.Point(685, 228)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(173, 57)
+        Me.Button10.TabIndex = 37
+        Me.Button10.Text = "Show Available"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
         'Button7
         '
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -451,20 +461,12 @@ Partial Class Admin
         Me.DataGridView2.Size = New System.Drawing.Size(673, 382)
         Me.DataGridView2.TabIndex = 31
         '
-        'Button10
-        '
-        Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button10.Location = New System.Drawing.Point(685, 228)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(173, 57)
-        Me.Button10.TabIndex = 37
-        Me.Button10.Text = "Show Available"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
+        Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1140, 591)
         Me.Controls.Add(Me.dbcontrol)
         Me.Controls.Add(Me.Button1)

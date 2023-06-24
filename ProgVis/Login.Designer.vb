@@ -110,8 +110,12 @@ Partial Class Login
         Me.Button1.Text = "Check Connection"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'Timer1
+        '
+        '
         'Login
         '
+        Me.AcceptButton = Me.Button2
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
@@ -124,6 +128,7 @@ Partial Class Login
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         Me.ResumeLayout(False)
         Me.PerformLayout()

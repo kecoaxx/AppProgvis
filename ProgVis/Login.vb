@@ -3,8 +3,11 @@ Imports System.Reflection.Emit
 Imports System.Threading
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar
-Imports mysql.Data.MySqlClient
+Imports MySql.Data.MySqlClient
+
+
 Public Class Login
+    Public username As String = "1"
     Dim conn As New MySqlConnection With {.ConnectionString = "server=127.0.0.1;userid=root;password='Placeholder1';database=progvis"}
     Dim COMMAND As MySqlCommand
     Dim READER As MySqlDataReader
@@ -69,6 +72,7 @@ Public Class Login
             End While
 
             If count = 1 Then
+                username = TextBox1.Text
                 OpenUserRoleForm(userRole)
             Else
                 MessageBox.Show("Incorrect Username or Password")

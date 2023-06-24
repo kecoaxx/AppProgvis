@@ -10,7 +10,7 @@ Public Class Koki
 
     Private Sub Koki_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
-        LoadTable(Q:="SELECT NamaMenu, JenisMenu FROM progvis.menu",
+        LoadTable(Q:="SELECT NamaMenu, JenisMenu, Tersedia FROM progvis.menu",
                     R:=DataGridView1)
         DataGridView1.ReadOnly = True
         For Each column As DataGridViewColumn In DataGridView1.Columns
@@ -57,7 +57,7 @@ Public Class Koki
             LoadTable(Q:="UPDATE progvis.menu SET Tersedia='N'", R:=DataGridView1)
             LoadTable(Q:=$"UPDATE progvis.menu SET Tersedia='Y' WHERE NamaMenu IN ({menuname})",
                         R:=DataGridView1)
-            LoadTable(Q:="select * from progvis.menu", R:=DataGridView1)
+            LoadTable(Q:="select NamaMenu, JenisMenu, Tersedia from progvis.menu", R:=DataGridView1)
         Catch ex As Exception
             MsgBox(ex.Message)
             conn.Close()
@@ -81,11 +81,6 @@ Public Class Koki
             End If
         End If
     End Sub
-
-    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
-
-    End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         RichTextBox1.Clear()
     End Sub
@@ -94,4 +89,5 @@ Public Class Koki
         Login.Show()
         Hide()
     End Sub
+
 End Class
