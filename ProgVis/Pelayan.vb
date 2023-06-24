@@ -41,7 +41,6 @@ Public Class Pelayan
         Return result ' Return the retrieved value
     End Function
 
-
     Private Sub LoadTable(Q As String, R As Object, Optional S As String = "A")
         Dim SDA As New MySqlDataAdapter
         Dim bindSource As New BindingSource
@@ -90,4 +89,11 @@ Public Class Pelayan
         End If
 
     End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        Dim combo As String = ComboBox1(Text)
+        LoadQuery($"select * from progvis.menu where JenisMenu  = {combo}'")
+
+    End Sub
+
 End Class
