@@ -30,25 +30,26 @@ Partial Class Pelayan
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.idpesan = New System.Windows.Forms.TextBox()
+        Me.iddetail = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.nomormeja = New System.Windows.Forms.TextBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.iddetail = New System.Windows.Forms.TextBox()
-        Me.idpesan = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.nama = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.qty = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.addqty = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.minqty = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.del = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.namamakanan = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.quantity = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.idmakanan = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -70,6 +71,8 @@ Partial Class Pelayan
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -94,19 +97,9 @@ Partial Class Pelayan
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 10
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(328, 390)
+        Me.DataGridView1.Size = New System.Drawing.Size(462, 390)
         Me.DataGridView1.TabIndex = 51
         Me.DataGridView1.UseWaitCursor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 553)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(465, 29)
-        Me.Label2.TabIndex = 52
-        Me.Label2.Text = "Catatan: Y = Tersedia, N = Tidak Tersedia"
         '
         'Button4
         '
@@ -120,7 +113,7 @@ Partial Class Pelayan
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(343, 71)
+        Me.ComboBox1.Location = New System.Drawing.Point(283, 89)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 24)
         Me.ComboBox1.TabIndex = 55
@@ -132,11 +125,18 @@ Partial Class Pelayan
         Me.TabControl1.Location = New System.Drawing.Point(12, 119)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1096, 431)
+        Me.TabControl1.Size = New System.Drawing.Size(1096, 460)
         Me.TabControl1.TabIndex = 56
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Label2)
+        Me.TabPage1.Controls.Add(Me.idmakanan)
+        Me.TabPage1.Controls.Add(Me.Button2)
+        Me.TabPage1.Controls.Add(Me.Label7)
+        Me.TabPage1.Controls.Add(Me.quantity)
+        Me.TabPage1.Controls.Add(Me.Label6)
+        Me.TabPage1.Controls.Add(Me.namamakanan)
         Me.TabPage1.Controls.Add(Me.DataGridView2)
         Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.Label4)
@@ -146,18 +146,60 @@ Partial Class Pelayan
         Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Controls.Add(Me.nomormeja)
         Me.TabPage1.Controls.Add(Me.DataGridView1)
-        Me.TabPage1.Controls.Add(Me.ComboBox1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1088, 402)
+        Me.TabPage1.Size = New System.Drawing.Size(1088, 431)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(638, 52)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(77, 16)
+        Me.Label5.TabIndex = 62
+        Me.Label5.Text = "ID Pesanan"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(480, 52)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(115, 16)
+        Me.Label4.TabIndex = 61
+        Me.Label4.Text = "ID Detail Pesanan"
+        '
+        'idpesan
+        '
+        Me.idpesan.Location = New System.Drawing.Point(624, 71)
+        Me.idpesan.Name = "idpesan"
+        Me.idpesan.ReadOnly = True
+        Me.idpesan.Size = New System.Drawing.Size(121, 22)
+        Me.idpesan.TabIndex = 60
+        '
+        'iddetail
+        '
+        Me.iddetail.Location = New System.Drawing.Point(479, 71)
+        Me.iddetail.Name = "iddetail"
+        Me.iddetail.ReadOnly = True
+        Me.iddetail.Size = New System.Drawing.Size(121, 22)
+        Me.iddetail.TabIndex = 59
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(485, 6)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(81, 16)
+        Me.Label3.TabIndex = 58
+        Me.Label3.Text = "Nomor Meja"
+        '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(751, 31)
+        Me.Button1.Location = New System.Drawing.Point(479, 99)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 57
@@ -166,7 +208,7 @@ Partial Class Pelayan
         '
         'nomormeja
         '
-        Me.nomormeja.Location = New System.Drawing.Point(343, 32)
+        Me.nomormeja.Location = New System.Drawing.Point(474, 25)
         Me.nomormeja.Name = "nomormeja"
         Me.nomormeja.Size = New System.Drawing.Size(121, 22)
         Me.nomormeja.TabIndex = 56
@@ -181,51 +223,10 @@ Partial Class Pelayan
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(354, 6)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(81, 16)
-        Me.Label3.TabIndex = 58
-        Me.Label3.Text = "Nomor Meja"
-        '
-        'iddetail
-        '
-        Me.iddetail.Location = New System.Drawing.Point(479, 32)
-        Me.iddetail.Name = "iddetail"
-        Me.iddetail.ReadOnly = True
-        Me.iddetail.Size = New System.Drawing.Size(121, 22)
-        Me.iddetail.TabIndex = 59
-        '
-        'idpesan
-        '
-        Me.idpesan.Location = New System.Drawing.Point(624, 32)
-        Me.idpesan.Name = "idpesan"
-        Me.idpesan.ReadOnly = True
-        Me.idpesan.Size = New System.Drawing.Size(121, 22)
-        Me.idpesan.TabIndex = 60
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(485, 6)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(115, 16)
-        Me.Label4.TabIndex = 61
-        Me.Label4.Text = "ID Detail Pesanan"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(630, 6)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(77, 16)
-        Me.Label5.TabIndex = 62
-        Me.Label5.Text = "ID Pesanan"
-        '
         'DataGridView2
         '
+        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -237,7 +238,6 @@ Partial Class Pelayan
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.nama, Me.qty, Me.addqty, Me.minqty, Me.del})
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -246,63 +246,71 @@ Partial Class Pelayan
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView2.Location = New System.Drawing.Point(340, 101)
+        Me.DataGridView2.Location = New System.Drawing.Point(587, 128)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersWidth = 10
         Me.DataGridView2.RowTemplate.Height = 24
-        Me.DataGridView2.Size = New System.Drawing.Size(607, 295)
+        Me.DataGridView2.Size = New System.Drawing.Size(474, 268)
         Me.DataGridView2.TabIndex = 63
         Me.DataGridView2.UseWaitCursor = True
         '
-        'nama
+        'namamakanan
         '
-        Me.nama.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.nama.HeaderText = "Nama Menu"
-        Me.nama.MinimumWidth = 6
-        Me.nama.Name = "nama"
-        Me.nama.ReadOnly = True
-        Me.nama.Width = 172
+        Me.namamakanan.Location = New System.Drawing.Point(760, 32)
+        Me.namamakanan.Name = "namamakanan"
+        Me.namamakanan.Size = New System.Drawing.Size(121, 22)
+        Me.namamakanan.TabIndex = 64
         '
-        'qty
+        'Label6
         '
-        Me.qty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.qty.HeaderText = "quantity"
-        Me.qty.MinimumWidth = 6
-        Me.qty.Name = "qty"
-        Me.qty.ReadOnly = True
-        Me.qty.Width = 124
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(771, 13)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(103, 16)
+        Me.Label6.TabIndex = 65
+        Me.Label6.Text = "Nama Makanan"
         '
-        'addqty
+        'quantity
         '
-        Me.addqty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.addqty.HeaderText = "add"
-        Me.addqty.MinimumWidth = 6
-        Me.addqty.Name = "addqty"
-        Me.addqty.ReadOnly = True
-        Me.addqty.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.addqty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.addqty.Width = 83
+        Me.quantity.Location = New System.Drawing.Point(887, 32)
+        Me.quantity.Name = "quantity"
+        Me.quantity.Size = New System.Drawing.Size(121, 22)
+        Me.quantity.TabIndex = 66
         '
-        'minqty
+        'Label7
         '
-        Me.minqty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.minqty.HeaderText = "remove"
-        Me.minqty.MinimumWidth = 6
-        Me.minqty.Name = "minqty"
-        Me.minqty.ReadOnly = True
-        Me.minqty.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.minqty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.minqty.Width = 123
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(905, 13)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(25, 16)
+        Me.Label7.TabIndex = 67
+        Me.Label7.Text = "qty"
         '
-        'del
+        'Button2
         '
-        Me.del.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.del.HeaderText = "delete"
-        Me.del.MinimumWidth = 6
-        Me.del.Name = "del"
-        Me.del.ReadOnly = True
-        Me.del.Width = 87
+        Me.Button2.Location = New System.Drawing.Point(908, 71)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 68
+        Me.Button2.Text = "ADD"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'idmakanan
+        '
+        Me.idmakanan.Location = New System.Drawing.Point(760, 76)
+        Me.idmakanan.Name = "idmakanan"
+        Me.idmakanan.Size = New System.Drawing.Size(121, 22)
+        Me.idmakanan.TabIndex = 69
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(771, 57)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(114, 16)
+        Me.Label2.TabIndex = 70
+        Me.Label2.Text = "id nama makanan"
         '
         'Pelayan
         '
@@ -311,8 +319,8 @@ Partial Class Pelayan
         Me.ClientSize = New System.Drawing.Size(1140, 591)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Name = "Pelayan"
         Me.Text = "Pelayan"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -328,7 +336,6 @@ Partial Class Pelayan
     Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Label2 As Label
     Friend WithEvents Button4 As Button
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents TabControl1 As TabControl
@@ -342,9 +349,11 @@ Partial Class Pelayan
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents nama As DataGridViewTextBoxColumn
-    Friend WithEvents qty As DataGridViewTextBoxColumn
-    Friend WithEvents addqty As DataGridViewButtonColumn
-    Friend WithEvents minqty As DataGridViewButtonColumn
-    Friend WithEvents del As DataGridViewButtonColumn
+    Friend WithEvents Label7 As Label
+    Friend WithEvents quantity As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents namamakanan As TextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents idmakanan As TextBox
 End Class

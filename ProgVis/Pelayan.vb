@@ -17,8 +17,10 @@ Public Class Pelayan
         End If
 
         Timer1.Enabled = True
-        LoadTable(Q:="select NamaMenu as 'Nama Menu', JenisMenu as 'Jenis Menu', HargaMenu as 'Harga Menu' from progvis.menu where Tersedia='Y'",
+        LoadTable(Q:="select NamaMenu as 'Nama Menu', JenisMenu as 'Jenis Menu', HargaMenu as 'Harga Menu', idMenu from progvis.menu where Tersedia='Y'",
                   R:=DataGridView1)
+        LoadTable(Q:="select idDetailPesanan, NamaMenu as 'Nama Menu', HargaMenu as 'Harga Menu' from progvis.detail_pesanan",
+          R:=DataGridView2)
 
     End Sub
 
@@ -86,23 +88,9 @@ Public Class Pelayan
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
-            Dim hehe As String
             row = DataGridView1.Rows(e.RowIndex)
-            hehe = row.Cells("Nama Menu").Value.ToString()
-            Dim itemExists As Boolean = False
-            For Each dgvRow As DataGridViewRow In DataGridView2.Rows
-                If dgvRow.Cells("nama").Value IsNot Nothing AndAlso dgvRow.Cells("nama").Value.ToString() = hehe Then
-                    itemExists = True
-                    Exit For
-                End If
-            Next
-
-            ' Add a new row only if the item doesn't exist
-            If Not itemExists Then
-                Dim rowIndex As Integer = DataGridView2.Rows.Add()
-                Dim namaColumnIndex As Integer = DataGridView2.Columns("nama").Index
-                DataGridView2.Rows(rowIndex).Cells(namaColumnIndex).Value = hehe
-            End If
+            namamakanan.Text = row.Cells("Nama Menu").Value.ToString()
+            idmakanan.Text = row.Cells("idMenu").Value.ToString()
         End If
     End Sub
 
@@ -130,13 +118,30 @@ Public Class Pelayan
         LoadQuery($"INSERT INTO `progvis`.`pesanan` (NomorMeja) VALUES ({nomormeja.Text})")
         pesananid = LoadQuery($" select idPesanan from `progvis`.`pesanan` where NomorMeja = '{nomormeja.Text}' order by WaktuOrder desc")
         idpesan.Text = pesananid
+        LoadQuery($"insert into `progvis`.`pesanan` (idDetailPesanan) VALUES ({detailid})")
     End Sub
 
     Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
 
     End Sub
 
-    Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+    Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs)
+
+    End Sub
+
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick_2(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles idmakanan.TextChanged
 
     End Sub
 End Class
