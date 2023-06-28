@@ -116,13 +116,17 @@ Public Class Admin
             Dim namalengkap As String = namalengkapTextBox.Text
             Dim password As String = passwordTextBox.Text
             Dim jabatan As String = jabatanDroplist.Text
+            If gender = "" Then
+
+            End If
 
             Dim Query As String = $"UPDATE progvis.users SET 
                                     NamaLengkap = '{namalengkap}',
                                     Email = '{email}',
                                     Username = '{username}',
                                     Password = '{password}',
-                                    Jabatan = '{jabatan}'
+                                    Jabatan = '{jabatan}',
+                                    Gender = '{gender}'
                                     WHERE idUser = '{id}'"
             COMMAND = New MySqlCommand(Query, conn)
             READER = COMMAND.ExecuteReader
@@ -190,8 +194,10 @@ Public Class Admin
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
+
             row = DataGridView1.Rows(e.RowIndex)
 
             idTextBox.Text = row.Cells("idUser").Value.ToString()
@@ -200,6 +206,12 @@ Public Class Admin
             usernameTextBox.Text = row.Cells("Username").Value.ToString()
             passwordTextBox.Text = row.Cells("Password").Value.ToString()
             jabatanDroplist.Text = row.Cells("Jabatan").Value.ToString()
+            Dim genderRead As String = row.Cells("Gender").Value.ToString()
+            If genderRead = "Male" Then
+                male.Select()
+            ElseIf genderRead = "Female" Then
+                female.Select()
+            End If
 
         End If
     End Sub
@@ -276,5 +288,9 @@ Public Class Admin
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
         LoadTable(Q:="select * from progvis.menu where Tersedia='Y'", R:=DataGridView2)
+    End Sub
+
+    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
+
     End Sub
 End Class

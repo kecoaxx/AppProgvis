@@ -35,11 +35,14 @@ Partial Class Koki
         Me.Button4 = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -165,8 +168,19 @@ Partial Class Koki
         Me.TabPage1.UseVisualStyleBackColor = True
         Me.TabPage1.UseWaitCursor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(570, 275)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(465, 29)
+        Me.Label2.TabIndex = 51
+        Me.Label2.Text = "Catatan: Y = Tersedia, N = Tidak Tersedia"
+        Me.Label2.UseWaitCursor = True
+        '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.DataGridView2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 38)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -176,14 +190,15 @@ Partial Class Koki
         Me.TabPage2.UseVisualStyleBackColor = True
         Me.TabPage2.UseWaitCursor = True
         '
-        'Label2
+        'DataGridView2
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(570, 275)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(465, 29)
-        Me.Label2.TabIndex = 51
-        Me.Label2.Text = "Catatan: Y = Tersedia, N = Tidak Tersedia"
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Location = New System.Drawing.Point(8, 11)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.RowHeadersWidth = 51
+        Me.DataGridView2.RowTemplate.Height = 24
+        Me.DataGridView2.Size = New System.Drawing.Size(681, 386)
+        Me.DataGridView2.TabIndex = 0
         '
         'Koki
         '
@@ -199,6 +214,8 @@ Partial Class Koki
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -216,4 +233,5 @@ Partial Class Koki
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Label2 As Label
+    Friend WithEvents DataGridView2 As DataGridView
 End Class
