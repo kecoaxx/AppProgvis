@@ -1,4 +1,5 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ListView
 Imports MySql.Data.MySqlClient
 Imports Mysqlx.XDevAPI.Relational
 
@@ -9,18 +10,17 @@ Public Class Pelayan
     Dim READER As MySqlDataReader
     Dim data_Table As New DataTable
     Dim username As String = Login.username
+    Dim iduser As String = LoadQuery($"select idUser from progvis.users where Username = {username}")
     Dim NamaLengkap As String = LoadQuery(Q:=$"select NamaLengkap from progvis.users where Username = {username}")
 
     Private Sub Pelayan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If conn.State = ConnectionState.Closed Then
-            conn.Open()
-        End If
-
+        Timer2.Interval = 1000
         Timer1.Enabled = True
+        Timer2.Enabled = True
         LoadTable(Q:="select NamaMenu as 'Nama Menu', JenisMenu as 'Jenis Menu', HargaMenu as 'Harga Menu', idMenu from progvis.menu where Tersedia='Y'",
-                  R:=DataGridView1)
-        LoadTable(Q:="select idDetailPesanan, NamaMenu as 'Nama Menu', HargaMenu as 'Harga Menu' from progvis.detail_pesanan",
-          R:=DataGridView2)
+                  R:=DataGridView3)
+        LoadTable(Q:="select NamaMenu as 'Nama Menu', idDetailPesanan, StatusPesanan as 'Status Pesanan' from progvis.detail_pesanan",
+                  R:=DataGridView5)
 
     End Sub
 
@@ -76,8 +76,8 @@ Public Class Pelayan
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim timestring As String
         timestring = Date.Now.ToString("hh:mm:ss")
-        Dim namalengkap As String = LoadQuery($"select NamaLengkap from progvis.users where Username = {username}")
-        Label1.Text = $"Welcome {namalengkap} | {timestring}"
+        Label1.Text = $"Welcome {NamaLengkap} | {timestring}"
+
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -85,63 +85,139 @@ Public Class Pelayan
         Hide()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub DataGridView3_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView3.CellContentClick, DataGridView3.CellContentClick
+        If nomormeja.Text = "" Then
+            MessageBox.Show("Masukkan nomor meja")
+        Else
+            If e.RowIndex >= 0 Then
+                Dim row As DataGridViewRow
+                row = DataGridView3.Rows(e.RowIndex)
+                namamakanan.Text = row.Cells("Nama Menu").Value.ToString()
+                TextBox6.Text = row.Cells("idMenu").Value.ToString()
+            End If
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click, Button7.Click
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim pelNoMeja As String = nomormeja.Text
+            Dim pelIdDetail As String = iddetail.Text
+            Dim pelIdPesanan As String = idpesan.Text
+            Dim pelNamaMakanan As String = namamakanan.Text
+            Dim pelIdMakanan As String = TextBox6.Text
+            Dim hargaqty As String = LoadQuery($"select HargaMenu from progvis.menu where NamaMenu = '{pelNamaMakanan}'")
+            Dim pelQty As String = Integer.Parse(quantity.Text) * hargaqty
+
+            LoadQuery($"INSERT INTO `progvis`.`detail_pesanan` (idDetailPesanan, idMenu, NamaMenu, HargaMenu, NomorMeja, qty) 
+                        Values ('{pelIdDetail}','{pelIdMakanan}','{pelNamaMakanan}','{pelQty}','{pelNoMeja}','{quantity.Text}')")
+            LoadTable(Q:=$"select NamaMenu as 'Nama Menu', qty as 'QTY' ,HargaMenu as 'Harga Menu', idMenu from progvis.detail_pesanan where idDetailPesanan = '{pelIdDetail}'",
+                      R:=DataGridView4)
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub namamakanan_TextChanged(sender As Object, e As EventArgs) Handles namamakanan.TextChanged, TextBox4.TextChanged
+        quantity.Clear()
+        quantity.Text = "1"
+    End Sub
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click, Button8.Click
+        If nomormeja.Text = "" Then
+            MessageBox.Show("Masukkan nomor meja")
+        Else
+            Dim pesananid As String
+            Dim isnulldetail As String = LoadQuery("select idDetailPesanan from progvis.detail_pesanan order by idDetailPesanan desc")
+            If isnulldetail = "" Then
+                iddetail.Text = "D001"
+            Else
+                Dim currentId As Integer = Integer.Parse(isnulldetail.Substring(1))
+                Dim nextId As Integer = currentId + 1
+                iddetail.Text = "D" + nextId.ToString("D3")
+            End If
+            LoadQuery($"UPDATE `progvis`.`pesanan` SET idUser = '{iduser}' WHERE idPesanan = '{idpesan.Text}';")
+            LoadQuery($"INSERT INTO `progvis`.`pesanan` (NomorMeja) VALUES ({nomormeja.Text})")
+            pesananid = LoadQuery($" select idPesanan from `progvis`.`pesanan` where NomorMeja = '{nomormeja.Text}' order by idPesanan desc")
+            idpesan.Text = pesananid
+            LoadQuery($"UPDATE `progvis`.`pesanan` SET idDetailPesanan = '{iddetail.Text}' WHERE idPesanan = '{idpesan.Text}';")
+        End If
+    End Sub
+
+    Private Sub DataGridView4_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView4.CellContentClick, DataGridView4.CellContentClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
-            row = DataGridView1.Rows(e.RowIndex)
+            row = DataGridView4.Rows(e.RowIndex)
             namamakanan.Text = row.Cells("Nama Menu").Value.ToString()
-            idmakanan.Text = row.Cells("idMenu").Value.ToString()
+            TextBox6.Text = row.Cells("idMenu").Value.ToString()
+            quantity.Text = row.Cells("QTY").Value.ToString()
         End If
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-        Dim combo As String = ComboBox1.Text
-        LoadQuery($"select * from progvis.menu where JenisMenu  = {combo}'")
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click, Button9.Click
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim pelNoMeja As String = nomormeja.Text
+            Dim pelIdDetail As String = iddetail.Text
+            Dim pelIdPesanan As String = idpesan.Text
+            Dim pelNamaMakanan As String = namamakanan.Text
+            Dim pelIdMakanan As String = idmakanan.Text
+            Dim hargaqty As String = LoadQuery($"select HargaMenu from progvis.menu where NamaMenu = '{pelNamaMakanan}'")
+            Dim pelQty As String = Integer.Parse(quantity.Text) * hargaqty
+
+            LoadQuery($"UPDATE `progvis`.`detail_pesanan`
+                        SET
+                        idMenu = '{pelIdMakanan}',
+                        NamaMenu = '{pelNamaMakanan}',
+                        HargaMenu = '{pelQty}',
+                        NomorMeja = '{pelNoMeja}'
+                        WHERE
+                        idMenu = '{pelIdMakanan}'")
+            LoadTable(Q:=$"select NamaMenu as 'Nama Menu', qty as 'QTY' ,HargaMenu as 'Harga Menu', idMenu from progvis.detail_pesanan where idDetailPesanan = '{pelIdDetail}'",
+                      R:=DataGridView4)
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click, Button11.Click
+        LoadQuery($"DELETE FROM progvis.detail_pesanan WHERE idMenu = '{idmakanan.Text}' AND idDetailPesanan = '{iddetail.Text}'")
+        LoadTable(Q:=$"select NamaMenu as 'Nama Menu', HargaMenu as 'Harga Menu' from progvis.detail_pesanan where idDetailPesanan = '{iddetail.Text}'",
+                  R:=DataGridView4)
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click, Button12.Click
+
+        nomormeja.Clear()
+        iddetail.Clear()
+        TextBox6.Clear()
+        namamakanan.Clear()
+        idpesan.Clear()
+        quantity.Clear()
+        LoadQuery($"select NamaMenu as 'Nama Menu', idDetailPesanan, StatusPesanan as 'Status Pesanan' from progvis.detail_pesanan where 1 = 0")
+    End Sub
+
+    Private Sub Button10_Click_1(sender As Object, e As EventArgs) Handles Button10.Click, Button13.Click
+        LoadTable($"select NamaMenu as 'Nama Menu', HargaMenu as 'Harga Menu' from progvis.detail_pesanan WHERE idDetailPesanan = '{iddetail.Text}'", DataGridView4)
+    End Sub
+
+    Private Sub TabPage3_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub Button14_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-        If nomormeja.Text = "" Then
-            MessageBox.Show("Please Input Table Number")
-        End If
-
-        Dim detailid As String
-        Dim pesananid As String
-        LoadQuery($"INSERT INTO `progvis`.`detail_pesanan` (NomorMeja) VALUES ({nomormeja.Text})")
-        detailid = LoadQuery($" select idDetailPesanan from `progvis`.`detail_pesanan` where NomorMeja = '{nomormeja.Text}' order by Time desc")
-        iddetail.Text = detailid
-        LoadQuery($"INSERT INTO `progvis`.`pesanan` (NomorMeja) VALUES ({nomormeja.Text})")
-        pesananid = LoadQuery($" select idPesanan from `progvis`.`pesanan` where NomorMeja = '{nomormeja.Text}' order by WaktuOrder desc")
-        idpesan.Text = pesananid
-        LoadQuery($"insert into `progvis`.`pesanan` (idDetailPesanan) VALUES ({detailid})")
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        LoadTable(Q:="select NamaMenu as 'Nama Menu', idDetailPesanan, StatusPesanan as 'Status Pesanan' from progvis.detail_pesanan",
+                  R:=DataGridView5)
     End Sub
 
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
 
-    End Sub
-
-    Private Sub DataGridView2_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs)
-
-    End Sub
-
-    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
-
-    End Sub
-
-    Private Sub DataGridView2_CellContentClick_2(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
-
-    End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles idmakanan.TextChanged
-
-    End Sub
 End Class

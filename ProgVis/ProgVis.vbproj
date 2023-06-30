@@ -171,6 +171,9 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Kasir.resx">
+      <DependentUpon>Kasir.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Koki.resx">
       <DependentUpon>Koki.vb</DependentUpon>
     </EmbeddedResource>

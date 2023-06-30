@@ -32,7 +32,11 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.ProgVis.Pelayan
+            Me.MainForm = Global.ProgVis.Kasir
+
+
+
+
 
 
         End Sub

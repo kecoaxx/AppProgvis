@@ -11,6 +11,8 @@ Public Class Admin
     Dim data_Table As New DataTable
     Dim gender As String
     Dim username As String = Login.username
+    Dim NamaLengkap As String = LoadQuery(Q:=$"select NamaLengkap from progvis.users where Username = {username}")
+
 
 
     Private Sub Admin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -65,6 +67,30 @@ Public Class Admin
             table.TableName = S
         End If
     End Sub
+    Private Function LoadQuery(Q As String) As String
+        Dim result As String = "" ' Initialize the result variable
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim Query As String = Q
+            COMMAND = New MySqlCommand(Query, conn)
+            READER = COMMAND.ExecuteReader
+
+            If READER.Read() Then ' Check if there is a row returned
+                result = READER.GetString(0) ' Assuming the NamaLengkap column is the first column in the query result
+            End If
+
+            READER.Close() ' Close the data reader after retrieving the value
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn.Close() ' Always close the connection
+        End Try
+
+        Return result ' Return the retrieved value
+    End Function
+
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Login.Show()
@@ -74,7 +100,7 @@ Public Class Admin
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim timestring As String
         timestring = Date.Now.ToString("hh:mm:ss")
-        Label1.Text = $"Welcome {username} | {timestring}"
+        Label1.Text = $"Welcome {NamaLengkap} | {timestring}"
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -116,9 +142,7 @@ Public Class Admin
             Dim namalengkap As String = namalengkapTextBox.Text
             Dim password As String = passwordTextBox.Text
             Dim jabatan As String = jabatanDroplist.Text
-            If gender = "" Then
 
-            End If
 
             Dim Query As String = $"UPDATE progvis.users SET 
                                     NamaLengkap = '{namalengkap}',

@@ -1,5 +1,6 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports MySql.Data.MySqlClient
+Imports Mysqlx.XDevAPI.Relational
 
 Public Class Koki
     Dim conn As New MySqlConnection With {.ConnectionString = "server=127.0.0.1;userid=root;password='Placeholder1';database=progvis"}
@@ -7,17 +8,44 @@ Public Class Koki
     Dim READER As MySqlDataReader
     Dim data_Table As New DataTable
     Dim gender As String
+    Dim status As String
 
     Private Sub Koki_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
         LoadTable(Q:="SELECT NamaMenu, JenisMenu, Tersedia FROM progvis.menu",
                     R:=DataGridView1)
+        LoadTable(Q:="SELECT NamaMenu, NomorMeja, StatusPesanan, number FROM progvis.detail_pesanan",
+                    R:=DataGridView2)
         DataGridView1.ReadOnly = True
         For Each column As DataGridViewColumn In DataGridView1.Columns
             column.Width = 150
         Next
 
     End Sub
+
+    Private Function LoadQuery(Q As String) As String
+        Dim result As String = "" ' Initialize the result variable
+        Try
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim Query As String = Q
+            COMMAND = New MySqlCommand(Query, conn)
+            READER = COMMAND.ExecuteReader
+
+            If READER.Read() Then ' Check if there is a row returned
+                result = READER.GetString(0) ' Assuming the NamaLengkap column is the first column in the query result
+            End If
+
+            READER.Close() ' Close the data reader after retrieving the value
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conn.Close() ' Always close the connection
+        End Try
+
+        Return result ' Return the retrieved value
+    End Function
 
     Private Sub LoadTable(Q As String, R As Object, Optional S As String = "A")
         Dim SDA As New MySqlDataAdapter
@@ -91,6 +119,45 @@ Public Class Koki
     End Sub
 
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow
+            row = DataGridView2.Rows(e.RowIndex)
+            Dim genderRead As String = row.Cells("StatusPesanan").Value.ToString()
+            If genderRead = "Belum" Then
+                RadioButton1.Select()
+            ElseIf genderRead = "Dalam Proses" Then
+                RadioButton2.Select()
+            ElseIf genderRead = "Selesai" Then
+                RadioButton3.Select()
+            End If
+            TextBox1.Text = row.Cells("number").Value.ToString()
+        End If
+    End Sub
 
+    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1.CheckedChanged
+        status = "Belum"
+    End Sub
+
+    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton2.CheckedChanged
+        status = "Dalam Proses"
+    End Sub
+
+    Private Sub RadioButton3_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton3.CheckedChanged
+        status = "Selesai"
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        LoadTable(Q:="SELECT NamaMenu, NomorMeja, StatusPesanan, number FROM progvis.detail_pesanan",
+                    R:=DataGridView2)
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        If TextBox1.Text = "" Then
+            MessageBox.Show("Pilih dari tabel terlebih dahulu")
+        Else
+            LoadQuery($"UPDATE progvis.detail_pesanan SET StatusPesanan = '{status}' where `number` = '{TextBox1.Text}'")
+            LoadTable(Q:="SELECT NamaMenu, NomorMeja, StatusPesanan, number FROM progvis.detail_pesanan",
+                      R:=DataGridView2)
+        End If
     End Sub
 End Class
