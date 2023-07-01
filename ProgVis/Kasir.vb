@@ -1,4 +1,5 @@
-﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ListView
+﻿Imports System.Drawing.Printing
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ListView
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 Imports MySql.Data.MySqlClient
 
@@ -10,7 +11,10 @@ Public Class Kasir
     Dim gender As String
     Dim username As String = Login.username
     Dim NamaLengkap As String = LoadQuery(Q:=$"select NamaLengkap from progvis.users where Username = {username}")
-    Dim NomorMeja As String = LoadQuery(Q:=$"select NomorMeja from progvis.detail_pesanan where idDetailPesanan = {TextBox1.Text}")
+    Dim PPD As New PrintPreviewDialog
+    Dim longpaper As Integer
+    Dim dataRows As List(Of DataRow)
+    Dim WithEvents PD As New PrintDocument
 
     Private Sub Kasir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
@@ -76,5 +80,130 @@ Public Class Kasir
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         LoadTable($"select NamaMenu as 'Nama Menu',qty, HargaMenu as 'Harga Menu' from progvis.detail_pesanan WHERE idDetailPesanan = '{TextBox1.Text}'", DataGridView1)
 
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
+        If TextBox1.Text = "" Then
+            MessageBox.Show("masukkan id detail pesanan")
+        Else
+            ' Retrieve data from MySQL database based on the specified idDetailPesanan
+            Dim idDetailPesanan As String = TextBox1.Text ' Assumes the TextBox contains the idDetailPesanan input
+            If conn.State = ConnectionState.Closed Then
+                conn.Open()
+            End If
+            Dim command As New MySqlCommand("SELECT NamaMenu, qty, HargaMenu, idDetailPesanan, NomorMeja FROM detail_pesanan WHERE idDetailPesanan = @id", conn)
+            command.Parameters.AddWithValue("@id", idDetailPesanan)
+            Dim adapter As New MySqlDataAdapter(command)
+            Dim table As New DataTable()
+            adapter.Fill(table)
+            dataRows = table.Rows.Cast(Of DataRow)().ToList()
+
+            If dataRows.Count > 0 Then ' If there are rows with the specified idDetailPesanan
+                changelongpaper()
+                PPD.Document = PD
+                PPD.ShowDialog()
+
+                ' Update the values of "id pesanan" and "No Meja" in the PrintPage event handler
+                PD.Print()
+            Else
+                MessageBox.Show("Data not found for the specified idDetailPesanan.")
+            End If
+            conn.Close()
+            LoadQuery($"Update progvis.pesanan Set TotalHarga = '{t_price}' where idDetailPesanan ='{TextBox1.Text}'")
+
+        End If
+
+    End Sub
+
+    Sub changelongpaper()
+        longpaper = 0
+        longpaper = dataRows.Count * 15
+        longpaper = longpaper + 210
+    End Sub
+
+    Private Sub PD_BeginPrint(sender As Object, e As Printing.PrintEventArgs) Handles PD.BeginPrint
+        Dim pagesetup As New PageSettings
+        pagesetup.PaperSize = New PaperSize("custom", 250, longpaper)
+        PD.DefaultPageSettings = pagesetup
+    End Sub
+
+    Private Sub PD_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PD.PrintPage
+        Dim f8 As New Font("Calibri", 8, FontStyle.Regular)
+        Dim f10 As New Font("Calibri", 10, FontStyle.Regular)
+        Dim f10b As New Font("Calibri", 10, FontStyle.Bold)
+        Dim f14 As New Font("Calibri", 14, FontStyle.Bold)
+
+        Dim leftmargin As Integer = PD.DefaultPageSettings.Margins.Left
+        Dim centermargin As Integer = PD.DefaultPageSettings.PaperSize.Width / 2
+        Dim rightmargin As Integer = PD.DefaultPageSettings.PaperSize.Width
+
+        ' Font alignment
+        Dim right As New StringFormat
+        Dim center As New StringFormat
+        right.Alignment = StringAlignment.Far
+        center.Alignment = StringAlignment.Center
+
+        Dim line As String
+        line = "----------------------------------------------------------------------------"
+        e.Graphics.DrawString("SESAJAENN", f14, Brushes.Black, centermargin, 5, center)
+        e.Graphics.DrawString("Fakultas Teknik Prodi Elektro", f10, Brushes.Black, centermargin, 25, center)
+        e.Graphics.DrawString("Tel 08872202869", f8, Brushes.Black, centermargin, 40, center)
+
+        e.Graphics.DrawString("ID Pesanan", f10, Brushes.Black, 0, 60)
+        e.Graphics.DrawString(":", f10, Brushes.Black, 70, 60)
+        e.Graphics.DrawString(dataRows(0)("idDetailPesanan").ToString(), f10, Brushes.Black, 100, 60)
+
+        e.Graphics.DrawString("No Meja", f10, Brushes.Black, 0, 75)
+        e.Graphics.DrawString(":", f10, Brushes.Black, 70, 75)
+        e.Graphics.DrawString(dataRows(0)("NomorMeja").ToString(), f10, Brushes.Black, 100, 75)
+
+        e.Graphics.DrawString("Kasir", f10, Brushes.Black, 0, 90)
+        e.Graphics.DrawString(":", f10, Brushes.Black, 70, 90)
+        e.Graphics.DrawString($"{NamaLengkap}", f10, Brushes.Black, 100, 90)
+
+        e.Graphics.DrawString(DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss"), f10, Brushes.Black, 0, 105)
+
+        e.Graphics.DrawString(line, f8, Brushes.Black, 0, 120)
+
+        Dim height As Integer = 0 ' DGV position
+        For Each row As DataRow In dataRows
+            height += 30
+            e.Graphics.DrawString(row("NamaMenu").ToString(), f10, Brushes.Black, 25, 100 + height)
+            e.Graphics.DrawString(row("qty").ToString(), f10, Brushes.Black, 0, 100 + height)
+            Dim price As Integer = Integer.Parse(row("HargaMenu").ToString())
+            e.Graphics.DrawString(price.ToString(), f10, Brushes.Black, rightmargin, 100 + height, right)
+        Next
+
+        Dim height2 As Integer
+        height2 = 110 + height
+        sumprice() ' Call the sumprice sub
+        e.Graphics.DrawString(line, f8, Brushes.Black, 0, height2)
+        e.Graphics.DrawString("Total: " & Format(t_price, "## ##0"), f10b, Brushes.Black, rightmargin, 15 + height2, right)
+        e.Graphics.DrawString(t_qty, f10b, Brushes.Black, 0, 15 + height2)
+
+        e.Graphics.DrawString("Terima Kasih Sudah Berkunjung", f10b, Brushes.Black, centermargin, 40 + height2, center)
+        e.Graphics.DrawString("-Sesajaenn-", f10b, Brushes.Black, centermargin, 55 + height2, center)
+    End Sub
+
+    Dim t_price As Long
+    Dim t_qty As Long
+
+    Sub sumprice()
+        Dim countprice As Long = 0
+        For Each row As DataRow In dataRows
+            countprice += (Integer.Parse(row("HargaMenu").ToString()) * Integer.Parse(row("qty").ToString()))
+        Next
+        t_price = countprice
+
+        Dim countqty As Long
+        For Each row As DataRow In dataRows
+            countqty += Integer.Parse(row("qty").ToString())
+        Next
+        t_qty = countqty
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        LoadTable("select NamaMenu as 'Nama Menu',qty, HargaMenu as 'Harga Menu' from progvis.detail_pesanan", DataGridView1)
     End Sub
 End Class
