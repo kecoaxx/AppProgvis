@@ -27,43 +27,26 @@ Partial Class Pelayan
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.nomormeja = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.iddetail = New System.Windows.Forms.TextBox()
         Me.idpesan = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.namamakanan = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.quantity = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.idmakanan = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
@@ -77,10 +60,13 @@ Partial Class Pelayan
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.DataGridView5 = New System.Windows.Forms.DataGridView()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.quantity = New System.Windows.Forms.TextBox()
+        Me.nomordetail = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -111,38 +97,6 @@ Partial Class Pelayan
         Me.Button4.Text = "Sign Out"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.DataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
-        Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 6)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersWidth = 10
-        Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(462, 390)
-        Me.DataGridView1.TabIndex = 51
-        Me.DataGridView1.UseWaitCursor = True
-        '
         'nomormeja
         '
         Me.nomormeja.Location = New System.Drawing.Point(479, 25)
@@ -168,7 +122,7 @@ Partial Class Pelayan
         '
         'idpesan
         '
-        Me.idpesan.Location = New System.Drawing.Point(606, 25)
+        Me.idpesan.Location = New System.Drawing.Point(609, 25)
         Me.idpesan.Name = "idpesan"
         Me.idpesan.ReadOnly = True
         Me.idpesan.Size = New System.Drawing.Size(121, 22)
@@ -192,38 +146,6 @@ Partial Class Pelayan
         Me.Label5.TabIndex = 62
         Me.Label5.Text = "ID Pesanan"
         '
-        'DataGridView2
-        '
-        Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.DataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
-        Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridView2.Location = New System.Drawing.Point(746, 6)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.ReadOnly = True
-        Me.DataGridView2.RowHeadersWidth = 10
-        Me.DataGridView2.RowTemplate.Height = 24
-        Me.DataGridView2.Size = New System.Drawing.Size(329, 390)
-        Me.DataGridView2.TabIndex = 63
-        Me.DataGridView2.UseWaitCursor = True
-        '
         'namamakanan
         '
         Me.namamakanan.Location = New System.Drawing.Point(479, 260)
@@ -240,13 +162,6 @@ Partial Class Pelayan
         Me.Label6.Size = New System.Drawing.Size(103, 16)
         Me.Label6.TabIndex = 65
         Me.Label6.Text = "Nama Makanan"
-        '
-        'quantity
-        '
-        Me.quantity.Location = New System.Drawing.Point(606, 260)
-        Me.quantity.Name = "quantity"
-        Me.quantity.Size = New System.Drawing.Size(121, 22)
-        Me.quantity.TabIndex = 66
         '
         'Label7
         '
@@ -283,67 +198,6 @@ Partial Class Pelayan
         Me.Label2.TabIndex = 70
         Me.Label2.Text = "id nama makanan"
         '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(627, 57)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 51)
-        Me.Button3.TabIndex = 72
-        Me.Button3.Text = "Generate"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(574, 292)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(75, 23)
-        Me.Button5.TabIndex = 73
-        Me.Button5.Text = "MODIFY"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(574, 320)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(75, 23)
-        Me.Button6.TabIndex = 74
-        Me.Button6.Text = "DELETE"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(655, 292)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 51)
-        Me.Button1.TabIndex = 75
-        Me.Button1.Text = "COMMIT"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(504, 99)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(75, 51)
-        Me.Button10.TabIndex = 76
-        Me.Button10.Text = "cari"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(493, 292)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(75, 51)
-        Me.Button7.TabIndex = 68
-        Me.Button7.Text = "ADD"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(479, 25)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(121, 22)
-        Me.TextBox1.TabIndex = 56
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -369,14 +223,6 @@ Partial Class Pelayan
         Me.Label9.TabIndex = 65
         Me.Label9.Text = "Nama Makanan"
         '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(606, 25)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(121, 22)
-        Me.TextBox3.TabIndex = 60
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
@@ -386,14 +232,6 @@ Partial Class Pelayan
         Me.Label10.TabIndex = 62
         Me.Label10.Text = "ID Pesanan"
         '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(479, 260)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(121, 22)
-        Me.TextBox4.TabIndex = 64
-        '
         'Label11
         '
         Me.Label11.AutoSize = True
@@ -402,13 +240,6 @@ Partial Class Pelayan
         Me.Label11.Size = New System.Drawing.Size(115, 16)
         Me.Label11.TabIndex = 61
         Me.Label11.Text = "ID Detail Pesanan"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(606, 260)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(121, 22)
-        Me.TextBox5.TabIndex = 66
         '
         'Label12
         '
@@ -433,23 +264,23 @@ Partial Class Pelayan
         Me.DataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         Me.DataGridView3.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView3.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView3.Location = New System.Drawing.Point(6, 6)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.ReadOnly = True
@@ -474,24 +305,24 @@ Partial Class Pelayan
         Me.DataGridView4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DataGridView4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         Me.DataGridView4.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView4.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView4.DefaultCellStyle = DataGridViewCellStyle8
-        Me.DataGridView4.Location = New System.Drawing.Point(746, 6)
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView4.DefaultCellStyle = DataGridViewCellStyle4
+        Me.DataGridView4.Location = New System.Drawing.Point(750, 6)
         Me.DataGridView4.Name = "DataGridView4"
         Me.DataGridView4.ReadOnly = True
         Me.DataGridView4.RowHeadersWidth = 10
@@ -520,7 +351,7 @@ Partial Class Pelayan
         '
         'Button11
         '
-        Me.Button11.Location = New System.Drawing.Point(574, 320)
+        Me.Button11.Location = New System.Drawing.Point(574, 321)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(75, 23)
         Me.Button11.TabIndex = 74
@@ -529,7 +360,7 @@ Partial Class Pelayan
         '
         'Button12
         '
-        Me.Button12.Location = New System.Drawing.Point(655, 292)
+        Me.Button12.Location = New System.Drawing.Point(652, 292)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(75, 51)
         Me.Button12.TabIndex = 75
@@ -538,7 +369,7 @@ Partial Class Pelayan
         '
         'Button13
         '
-        Me.Button13.Location = New System.Drawing.Point(504, 99)
+        Me.Button13.Location = New System.Drawing.Point(493, 99)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(75, 51)
         Me.Button13.TabIndex = 76
@@ -557,46 +388,35 @@ Partial Class Pelayan
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.nomordetail)
         Me.TabPage1.Controls.Add(Me.DataGridView3)
         Me.TabPage1.Controls.Add(Me.Button13)
         Me.TabPage1.Controls.Add(Me.Button2)
-        Me.TabPage1.Controls.Add(Me.Button12)
+        Me.TabPage1.Controls.Add(Me.idpesan)
         Me.TabPage1.Controls.Add(Me.nomormeja)
-        Me.TabPage1.Controls.Add(Me.Button10)
-        Me.TabPage1.Controls.Add(Me.Button7)
-        Me.TabPage1.Controls.Add(Me.Button1)
+        Me.TabPage1.Controls.Add(Me.Button12)
         Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.Button11)
-        Me.TabPage1.Controls.Add(Me.TextBox1)
         Me.TabPage1.Controls.Add(Me.iddetail)
-        Me.TabPage1.Controls.Add(Me.Button6)
         Me.TabPage1.Controls.Add(Me.Label8)
         Me.TabPage1.Controls.Add(Me.Button9)
         Me.TabPage1.Controls.Add(Me.Label6)
         Me.TabPage1.Controls.Add(Me.TextBox2)
         Me.TabPage1.Controls.Add(Me.Button8)
-        Me.TabPage1.Controls.Add(Me.idpesan)
-        Me.TabPage1.Controls.Add(Me.Button5)
         Me.TabPage1.Controls.Add(Me.Label9)
         Me.TabPage1.Controls.Add(Me.DataGridView4)
         Me.TabPage1.Controls.Add(Me.Label5)
-        Me.TabPage1.Controls.Add(Me.Button3)
-        Me.TabPage1.Controls.Add(Me.TextBox3)
         Me.TabPage1.Controls.Add(Me.Label13)
         Me.TabPage1.Controls.Add(Me.namamakanan)
-        Me.TabPage1.Controls.Add(Me.DataGridView2)
         Me.TabPage1.Controls.Add(Me.Label10)
         Me.TabPage1.Controls.Add(Me.Label4)
         Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.TextBox4)
         Me.TabPage1.Controls.Add(Me.TextBox6)
         Me.TabPage1.Controls.Add(Me.quantity)
-        Me.TabPage1.Controls.Add(Me.DataGridView1)
         Me.TabPage1.Controls.Add(Me.Label11)
         Me.TabPage1.Controls.Add(Me.Label12)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.idmakanan)
-        Me.TabPage1.Controls.Add(Me.TextBox5)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -607,6 +427,9 @@ Partial Class Pelayan
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.Button14)
+        Me.TabPage2.Controls.Add(Me.Label14)
+        Me.TabPage2.Controls.Add(Me.TextBox7)
         Me.TabPage2.Controls.Add(Me.DataGridView5)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
@@ -616,6 +439,34 @@ Partial Class Pelayan
         Me.TabPage2.Text = "Status"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'Button14
+        '
+        Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button14.Location = New System.Drawing.Point(670, 198)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(113, 48)
+        Me.Button14.TabIndex = 3
+        Me.Button14.Text = "Cari"
+        Me.Button14.UseVisualStyleBackColor = True
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(667, 119)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(242, 32)
+        Me.Label14.TabIndex = 2
+        Me.Label14.Text = "ID Detail Pesanan"
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox7.Location = New System.Drawing.Point(670, 154)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(113, 38)
+        Me.TextBox7.TabIndex = 1
+        '
         'DataGridView5
         '
         Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -624,11 +475,26 @@ Partial Class Pelayan
         Me.DataGridView5.ReadOnly = True
         Me.DataGridView5.RowHeadersWidth = 51
         Me.DataGridView5.RowTemplate.Height = 24
-        Me.DataGridView5.Size = New System.Drawing.Size(1073, 399)
+        Me.DataGridView5.Size = New System.Drawing.Size(638, 399)
         Me.DataGridView5.TabIndex = 0
         '
         'Timer2
         '
+        '
+        'quantity
+        '
+        Me.quantity.Location = New System.Drawing.Point(609, 260)
+        Me.quantity.Name = "quantity"
+        Me.quantity.Size = New System.Drawing.Size(121, 22)
+        Me.quantity.TabIndex = 66
+        '
+        'nomordetail
+        '
+        Me.nomordetail.Location = New System.Drawing.Point(697, 172)
+        Me.nomordetail.Name = "nomordetail"
+        Me.nomordetail.ReadOnly = True
+        Me.nomordetail.Size = New System.Drawing.Size(33, 22)
+        Me.nomordetail.TabIndex = 77
         '
         'Pelayan
         '
@@ -640,14 +506,13 @@ Partial Class Pelayan
         Me.Controls.Add(Me.Label1)
         Me.Name = "Pelayan"
         Me.Text = "Pelayan"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -657,36 +522,23 @@ Partial Class Pelayan
     Friend WithEvents Label1 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Button4 As Button
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents nomormeja As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents iddetail As TextBox
     Friend WithEvents idpesan As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents namamakanan As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents quantity As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents idmakanan As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button5 As Button
-    Friend WithEvents Button6 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button10 As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label10 As Label
-    Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents TextBox5 As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents DataGridView3 As DataGridView
@@ -702,4 +554,9 @@ Partial Class Pelayan
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents DataGridView5 As DataGridView
     Friend WithEvents Timer2 As Timer
+    Friend WithEvents Label14 As Label
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents Button14 As Button
+    Friend WithEvents quantity As TextBox
+    Friend WithEvents nomordetail As TextBox
 End Class

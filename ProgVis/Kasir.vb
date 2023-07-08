@@ -1,4 +1,5 @@
 ﻿Imports System.Drawing.Printing
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ListView
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel
 Imports MySql.Data.MySqlClient
@@ -11,6 +12,7 @@ Public Class Kasir
     Dim gender As String
     Dim username As String = Login.username
     Dim NamaLengkap As String = LoadQuery(Q:=$"select NamaLengkap from progvis.users where Username = {username}")
+    Dim idUser As String = LoadQuery(Q:=$"select idUser from progvis.users where Username = {username}")
     Dim PPD As New PrintPreviewDialog
     Dim longpaper As Integer
     Dim dataRows As List(Of DataRow)
@@ -18,7 +20,7 @@ Public Class Kasir
 
     Private Sub Kasir_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
-        LoadTable($"select NamaMenu as 'Nama Menu',qty, HargaMenu as 'Harga Menu' from progvis.detail_pesanan", DataGridView1)
+        LoadTable($"select idDetailPesanan, NamaMenu as 'Nama Menu',qty, HargaMenu as 'Harga Menu' from progvis.detail_pesanan", DataGridView1)
 
     End Sub
 
@@ -105,12 +107,14 @@ Public Class Kasir
                 PPD.ShowDialog()
 
                 ' Update the values of "id pesanan" and "No Meja" in the PrintPage event handler
-                PD.Print()
+
             Else
                 MessageBox.Show("Data not found for the specified idDetailPesanan.")
             End If
             conn.Close()
-            LoadQuery($"Update progvis.pesanan Set TotalHarga = '{t_price}' where idDetailPesanan ='{TextBox1.Text}'")
+            LoadQuery($"Update progvis.pesanan Set TotalHarga = '{t_price}' where idDetailPesanan ='{TextBox1.Text}';
+                        Update progvis.pesanan Set idUser = '{idUser}' where idDetailPesanan = '{TextBox1.Text}'")
+
 
         End If
 
@@ -204,6 +208,19 @@ Public Class Kasir
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        LoadTable("select NamaMenu as 'Nama Menu',qty, HargaMenu as 'Harga Menu' from progvis.detail_pesanan", DataGridView1)
+        LoadTable("select idDetailPesanan, NamaMenu as 'Nama Menu',qty, HargaMenu as 'Harga Menu' from progvis.detail_pesanan", DataGridView1)
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow
+            row = DataGridView1.Rows(e.RowIndex)
+            TextBox1.Text = row.Cells("idDetailPesanan").Value.ToString()
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Hide()
+        Login.Show()
     End Sub
 End Class

@@ -23,8 +23,8 @@ Partial Class Koki
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -37,13 +37,13 @@ Partial Class Koki
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.Button6 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -68,23 +68,23 @@ Partial Class Koki
         '
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle25.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle26.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle26
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Location = New System.Drawing.Point(8, 6)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 10
@@ -202,6 +202,72 @@ Partial Class Koki
         Me.TabPage2.UseVisualStyleBackColor = True
         Me.TabPage2.UseWaitCursor = True
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(974, 16)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(100, 34)
+        Me.TextBox1.TabIndex = 21
+        Me.TextBox1.UseWaitCursor = True
+        '
+        'Button6
+        '
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Location = New System.Drawing.Point(819, 235)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(126, 41)
+        Me.Button6.TabIndex = 20
+        Me.Button6.Text = "Set"
+        Me.Button6.UseVisualStyleBackColor = True
+        Me.Button6.UseWaitCursor = True
+        '
+        'RadioButton3
+        '
+        Me.RadioButton3.AutoSize = True
+        Me.RadioButton3.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton3.Location = New System.Drawing.Point(819, 183)
+        Me.RadioButton3.Name = "RadioButton3"
+        Me.RadioButton3.Size = New System.Drawing.Size(162, 46)
+        Me.RadioButton3.TabIndex = 4
+        Me.RadioButton3.Text = "Selesai"
+        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.RadioButton3.UseWaitCursor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton2.Location = New System.Drawing.Point(819, 131)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(273, 46)
+        Me.RadioButton2.TabIndex = 3
+        Me.RadioButton2.Text = "Dalam Proses"
+        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.RadioButton2.UseWaitCursor = True
+        '
+        'RadioButton1
+        '
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadioButton1.Location = New System.Drawing.Point(819, 79)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(144, 46)
+        Me.RadioButton1.TabIndex = 2
+        Me.RadioButton1.Text = "Belum"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.RadioButton1.UseWaitCursor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(819, 11)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(126, 44)
+        Me.Button5.TabIndex = 1
+        Me.Button5.Text = "Refresh"
+        Me.Button5.UseVisualStyleBackColor = True
+        Me.Button5.UseWaitCursor = True
+        '
         'DataGridView2
         '
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
@@ -215,66 +281,6 @@ Partial Class Koki
         Me.DataGridView2.Size = New System.Drawing.Size(805, 386)
         Me.DataGridView2.TabIndex = 0
         Me.DataGridView2.UseWaitCursor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(819, 11)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(126, 44)
-        Me.Button5.TabIndex = 1
-        Me.Button5.Text = "Refresh"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'RadioButton1
-        '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton1.Location = New System.Drawing.Point(819, 79)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(144, 46)
-        Me.RadioButton1.TabIndex = 2
-        Me.RadioButton1.Text = "Belum"
-        Me.RadioButton1.UseVisualStyleBackColor = True
-        '
-        'RadioButton2
-        '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton2.Location = New System.Drawing.Point(819, 131)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(273, 46)
-        Me.RadioButton2.TabIndex = 3
-        Me.RadioButton2.Text = "Dalam Proses"
-        Me.RadioButton2.UseVisualStyleBackColor = True
-        '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton3.Location = New System.Drawing.Point(819, 183)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(162, 46)
-        Me.RadioButton3.TabIndex = 4
-        Me.RadioButton3.Text = "Selesai"
-        Me.RadioButton3.UseVisualStyleBackColor = True
-        '
-        'Button6
-        '
-        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.Location = New System.Drawing.Point(819, 235)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(126, 41)
-        Me.Button6.TabIndex = 20
-        Me.Button6.Text = "Set"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(974, 16)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(100, 34)
-        Me.TextBox1.TabIndex = 21
         '
         'Koki
         '

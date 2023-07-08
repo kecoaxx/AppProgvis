@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Admin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Admin
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -34,9 +34,7 @@ Partial Class Admin
         Me.female = New System.Windows.Forms.RadioButton()
         Me.male = New System.Windows.Forms.RadioButton()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.idTextBox = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.namalengkapTextBox = New System.Windows.Forms.TextBox()
         Me.emailTextBox = New System.Windows.Forms.TextBox()
         Me.usernameTextBox = New System.Windows.Forms.TextBox()
@@ -61,11 +59,16 @@ Partial Class Admin
         Me.Button8 = New System.Windows.Forms.Button()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.TabPage1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.dbcontrol.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
@@ -100,9 +103,7 @@ Partial Class Admin
         Me.TabPage1.Controls.Add(Me.female)
         Me.TabPage1.Controls.Add(Me.male)
         Me.TabPage1.Controls.Add(Me.DataGridView1)
-        Me.TabPage1.Controls.Add(Me.Label10)
         Me.TabPage1.Controls.Add(Me.idTextBox)
-        Me.TabPage1.Controls.Add(Me.TextBox1)
         Me.TabPage1.Controls.Add(Me.namalengkapTextBox)
         Me.TabPage1.Controls.Add(Me.emailTextBox)
         Me.TabPage1.Controls.Add(Me.usernameTextBox)
@@ -200,16 +201,6 @@ Partial Class Admin
         Me.DataGridView1.Size = New System.Drawing.Size(572, 213)
         Me.DataGridView1.TabIndex = 23
         '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(880, 15)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(132, 29)
-        Me.Label10.TabIndex = 26
-        Me.Label10.Text = "Search Bar"
-        '
         'idTextBox
         '
         Me.idTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -217,14 +208,6 @@ Partial Class Admin
         Me.idTextBox.Name = "idTextBox"
         Me.idTextBox.Size = New System.Drawing.Size(220, 30)
         Me.idTextBox.TabIndex = 5
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(885, 65)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(180, 34)
-        Me.TextBox1.TabIndex = 25
         '
         'namalengkapTextBox
         '
@@ -361,7 +344,7 @@ Partial Class Admin
         '
         Me.jabatanDroplist.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.jabatanDroplist.FormattingEnabled = True
-        Me.jabatanDroplist.Items.AddRange(New Object() {"Admin", "Kasir", "Koki", "Manager", "Pelayan"})
+        Me.jabatanDroplist.Items.AddRange(New Object() {"Admin", "Kasir", "Koki", "Pelayan"})
         Me.jabatanDroplist.Location = New System.Drawing.Point(203, 194)
         Me.jabatanDroplist.Name = "jabatanDroplist"
         Me.jabatanDroplist.Size = New System.Drawing.Size(220, 33)
@@ -391,6 +374,7 @@ Partial Class Admin
         '
         Me.dbcontrol.Controls.Add(Me.TabPage1)
         Me.dbcontrol.Controls.Add(Me.TabPage2)
+        Me.dbcontrol.Controls.Add(Me.TabPage3)
         Me.dbcontrol.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dbcontrol.Location = New System.Drawing.Point(20, 117)
         Me.dbcontrol.Name = "dbcontrol"
@@ -461,6 +445,39 @@ Partial Class Admin
         Me.DataGridView2.Size = New System.Drawing.Size(673, 382)
         Me.DataGridView2.TabIndex = 31
         '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.Button9)
+        Me.TabPage3.Controls.Add(Me.DataGridView3)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 38)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(1100, 422)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Hasil Transaksi"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Button9
+        '
+        Me.Button9.Location = New System.Drawing.Point(945, 172)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(118, 64)
+        Me.Button9.TabIndex = 1
+        Me.Button9.Text = "Refresh"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.DataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Location = New System.Drawing.Point(6, 6)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.RowHeadersWidth = 51
+        Me.DataGridView3.RowTemplate.Height = 24
+        Me.DataGridView3.Size = New System.Drawing.Size(921, 410)
+        Me.DataGridView3.TabIndex = 0
+        '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -480,6 +497,8 @@ Partial Class Admin
         Me.dbcontrol.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -495,9 +514,7 @@ Partial Class Admin
     Friend WithEvents female As RadioButton
     Friend WithEvents male As RadioButton
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Label10 As Label
     Friend WithEvents idTextBox As TextBox
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents namalengkapTextBox As TextBox
     Friend WithEvents emailTextBox As TextBox
     Friend WithEvents usernameTextBox As TextBox
@@ -522,4 +539,7 @@ Partial Class Admin
     Friend WithEvents Button7 As Button
     Friend WithEvents Button8 As Button
     Friend WithEvents Button10 As Button
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents Button9 As Button
+    Friend WithEvents DataGridView3 As DataGridView
 End Class

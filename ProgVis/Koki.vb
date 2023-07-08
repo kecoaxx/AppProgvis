@@ -9,6 +9,8 @@ Public Class Koki
     Dim data_Table As New DataTable
     Dim gender As String
     Dim status As String
+    Dim username As String = Login.username
+    Dim NamaLengkap As String = LoadQuery(Q:=$"select NamaLengkap from progvis.users where Username = {username}")
 
     Private Sub Koki_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
@@ -76,7 +78,7 @@ Public Class Koki
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim timestring As String
         timestring = Date.Now.ToString("hh:mm:ss")
-        Label1.Text = $"Welcome Admin | {timestring}"
+        Label1.Text = $"Welcome {NamaLengkap} | {timestring}"
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -159,5 +161,9 @@ Public Class Koki
             LoadTable(Q:="SELECT NamaMenu, NomorMeja, StatusPesanan, number FROM progvis.detail_pesanan",
                       R:=DataGridView2)
         End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        LoadTable(Q:="select NamaMenu, JenisMenu, Tersedia from progvis.menu where tersedia = 'Y'", R:=DataGridView1)
     End Sub
 End Class

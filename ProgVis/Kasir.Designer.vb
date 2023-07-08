@@ -61,41 +61,46 @@ Partial Class Kasir
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 103)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(482, 476)
+        Me.DataGridView1.Size = New System.Drawing.Size(617, 476)
         Me.DataGridView1.TabIndex = 32
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(625, 141)
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(635, 150)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.Size = New System.Drawing.Size(132, 50)
         Me.Button2.TabIndex = 33
         Me.Button2.Text = "Search"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(625, 113)
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(635, 106)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(132, 38)
         Me.TextBox1.TabIndex = 34
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(625, 170)
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(635, 230)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.Size = New System.Drawing.Size(132, 50)
         Me.Button3.TabIndex = 35
         Me.Button3.Text = "Print"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(544, 141)
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(635, 302)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 52)
+        Me.Button4.Size = New System.Drawing.Size(132, 52)
         Me.Button4.TabIndex = 36
         Me.Button4.Text = "Refresh"
         Me.Button4.UseVisualStyleBackColor = True

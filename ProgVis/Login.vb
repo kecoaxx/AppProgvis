@@ -7,7 +7,7 @@ Imports MySql.Data.MySqlClient
 
 
 Public Class Login
-    Public username As String = "1"
+    Public username As String
     Dim conn As New MySqlConnection With {.ConnectionString = "server=127.0.0.1;userid=root;password='Placeholder1';database=progvis"}
     Dim COMMAND As MySqlCommand
     Dim READER As MySqlDataReader
@@ -61,8 +61,10 @@ Public Class Login
 
             Dim count As Integer = 0
             Dim userRole As String = ""
+            Dim usernamelogin As String = TextBox1.Text
+            Dim passwordlogin As String = TextBox2.Text
 
-            Dim Query As String = $"SELECT * FROM progvis.users WHERE Username='{TextBox1.Text}' AND Password='{TextBox2.Text}'"
+            Dim Query As String = $"SELECT * FROM progvis.users WHERE Username='{usernamelogin}' AND Password='{passwordlogin}'"
             COMMAND = New MySqlCommand(Query, conn)
             READER = COMMAND.ExecuteReader
 
@@ -85,7 +87,7 @@ Public Class Login
         End Try
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         Try
             If conn.State = ConnectionState.Closed Then
                 conn.Open()

@@ -41,6 +41,8 @@ Public Class Admin
                     R:=DataGridView1)
         LoadTable(Q:="SELECT * FROM progvis.menu",
                     R:=DataGridView2)
+        LoadTable(Q:="SELECT * FROM progvis.pesanan",
+                    R:=DataGridView3)
     End Sub
     ' FUNGSI LOAD TABLE DISINI
     Private Sub LoadTable(Q As String, R As Object, Optional S As String = "A")
@@ -317,4 +319,14 @@ Public Class Admin
     Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
 
     End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        LoadTable(Q:="SELECT * FROM progvis.pesanan",
+                    R:=DataGridView3)
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Login
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Login
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -30,7 +30,6 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
@@ -101,15 +100,6 @@ Partial Class Login
         Me.TextBox1.Size = New System.Drawing.Size(235, 34)
         Me.TextBox1.TabIndex = 9
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(614, 386)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(174, 52)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Check Connection"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Timer1
         '
         '
@@ -126,7 +116,6 @@ Partial Class Login
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button1)
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
@@ -142,6 +131,5 @@ Partial Class Login
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
     Friend WithEvents Timer1 As Timer
 End Class
